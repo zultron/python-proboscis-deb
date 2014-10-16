@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+
+PYTHONS:=$(shell pyversions -vr)
+PYTHON3S:=$(shell py3versions -vr)
+
+include /usr/share/openstack-pkg-tools/pkgos.make
+
+%:
+	dh $@ --buildsystem=python_distutils --with python2,python3
+
+override_dh_auto_install:
+	set -e && for pyvers in $(PYTHONS); do \
+		python$$pyvers setup.py install --install-layout=deb \
+			--root $(CURDIR)/debian/python-proboscis; \
+	done
+	set -e && for pyvers in $(PYTHON3S); do \
+		python$$pyvers setup.py install --install-layout=deb \
+			--root $(CURDIR)/debian/python3-proboscis; \
+		rm $(CURDIR)/debian/python3-proboscis/usr/lib/python3/dist-packages/proboscis/compatability/*2*.py ; \
+	done
+
+override_dh_clean:
+	dh_clean -O--buildsystem=python_distutils
+	rm -rf build
+	if ! [ -d .git ] ; then \
+		rm -f proboscis.egg-info/PKG-INFO ; \
+	fi
+

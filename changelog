@@ -1,0 +1,14 @@
+python-proboscis (1.2.6.0-2) unstable; urgency=medium
+
+  * Fixed debian/copyright as suggested by the FTP masters.
+  * Fixed long description reference to unexisting example (Closes: #745278).
+  * Standards-Version: 3.9.5.
+  * Updated Homepage URLs.
+
+ -- Thomas Goirand <zigo@debian.org>  Sat, 03 May 2014 05:48:41 +0000
+
+python-proboscis (1.2.6.0-1) unstable; urgency=low
+
+  * Initial release. (Closes: #725026)
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 30 Sep 2013 23:13:48 +0800

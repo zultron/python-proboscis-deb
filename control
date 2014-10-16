@@ -1,0 +1,69 @@
+Source: python-proboscis
+Section: python
+Priority: optional
+Maintainer: PKG OpenStack <openstack-devel@lists.alioth.debian.org>
+Uploaders: Julien Danjou <acid@debian.org>,
+           Thomas Goirand <zigo@debian.org>,
+           Mehdi Abaakouk <sileht@sileht.net>
+Build-Depends: debhelper (>= 9),
+               openstack-pkg-tools,
+               python-all (>= 2.6.6-3~),
+               python-setuptools,
+               python3-all,
+               python3-setuptools
+Standards-Version: 3.9.5
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=openstack/python-proboscis.git
+Vcs-Git: git://anonscm.debian.org/openstack/python-proboscis.git
+Homepage: https://github.com/rackerlabs/python-proboscis
+
+Package: python-proboscis
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: ${misc:Depends}, ${python:Depends}
+Recommends: ${python:Recommends}
+Description: extends Nose with certain TestNG like features - python 2.x
+ Proboscis is a Python test framework that extends Python's built-in unittest
+ module and Nose with features from TestNG.
+ .
+ TestNG is a testing framework inspired from JUnit and NUnit but introducing
+ some new functionalities that make it more powerful and easier to use.
+ .
+ Features:
+  * Uses decorators instead of naming conventions.
+  * Allows for TestNG style test methods, in which a class is initialized once,
+    as an alternative to using class fields.
+  * Allows for explicit test dependencies and skipping of dependent tests on
+    failures.
+  * Runs xUnit style clases if desired or needed for backwards compatibility.
+  * Uses Nose if available (but doesn't require it), and works with many of
+    its plugins.
+  * Runs in IronPython and Jython (although if you're targeting the JVM you
+    should consider using TestNG instead).
+ .
+ This package provides the Python 2.x module.
+
+Package: python3-proboscis
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: ${misc:Depends}, ${python3:Depends}
+Recommends: ${python3:Recommends}
+Description: extends Nose with certain TestNG like features - python 3.x
+ Proboscis is a Python test framework that extends Python's built-in unittest
+ module and Nose with features from TestNG.
+ .
+ TestNG is a testing framework inspired from JUnit and NUnit but introducing
+ some new functionalities that make it more powerful and easier to use.
+ .
+ Features:
+  * Uses decorators instead of naming conventions.
+  * Allows for TestNG style test methods, in which a class is initialized once,
+    as an alternative to using class fields.
+  * Allows for explicit test dependencies and skipping of dependent tests on
+    failures.
+  * Runs xUnit style clases if desired or needed for backwards compatibility.
+  * Uses Nose if available (but doesn't require it), and works with many of
+    its plugins.
+  * Runs in IronPython and Jython (although if you're targeting the JVM you
+    should consider using TestNG instead).
+ .
+ This package provides the Python 3.x module.
